@@ -10,7 +10,7 @@ def convert(file_name, width, suffix)
   system "convert " + file_name + ".png" + " -resize " + width.to_s + " converted/" + file_name + suffix + ".png"
 end
 
-config_file = File.open('imageConfig.txt', 'r')
+config_file = File.open('imageConfig', 'r')
 
 types = Hash.new
 files = Array.new
