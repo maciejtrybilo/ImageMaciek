@@ -7,10 +7,10 @@ require 'rubygems'
 require 'csv'
 
 def convert(file_name, width, suffix)
-  system "convert " + file_name + ".png" + " -resize " + width.to_s + " converted/" + file_name + suffix + ".png"
+  system "convert " + file_name + ".png -strip -resize " + width.to_s + " _converted/" + file_name + suffix + ".png"
 end
 
-config_file = File.open('imageConfig', 'r')
+config_file = File.open('_imageConfig.txt', 'r')
 
 types = Hash.new
 files = Array.new
@@ -39,26 +39,28 @@ end
 puts files.length.to_s + " file(s) to convert..."
 puts
 
-if !(File.directory? "converted")
-  Dir.mkdir "converted"
+if !(File.directory? "_converted")
+  Dir.mkdir "_converted"
 end
 
 files.each do |file|
-  filename = file[:file]
-  puts filename + "..."
-  type_def = types[file[:type]]
+  Dir.glob(file[:file]).each do |filename|  # expand the globs
+    puts filename + "..."
+    filename = File.basename(filename, '.png')
+    type_def = types[file[:type]]
 
-  if type_def[:iphone] != 0
-    convert(filename, type_def[:iphone], "@2x")
-    convert(filename, type_def[:iphone] / 2, "")
-  end
+    if type_def[:iphone] != 0
+      convert(filename, type_def[:iphone] * 2, "@2x")
+      convert(filename, type_def[:iphone], "")
+    end
 
-  if type_def[:ipad] != 0
-    convert(filename, type_def[:ipad], "@2x~ipad")
-    convert(filename, type_def[:ipad] / 2, "~ipad")
+    if type_def[:ipad] != 0
+      convert(filename, type_def[:ipad] * 2, "@2x~ipad")
+      convert(filename, type_def[:ipad], "~ipad")
+    end
   end
-  
 end
 
 puts
 puts "Done!"
+

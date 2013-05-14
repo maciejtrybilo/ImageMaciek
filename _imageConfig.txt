@@ -1,0 +1,77 @@
+# sizes in points
+
+# type name, iphone width, ipad width
+:types
+home_button, 63, 98
+nav_bar_button, 22
+like_dislike, 35, 50
+rotator, 32, 50
+player_infoview, 38
+background_tile, 4
+Icon-72, 72
+Icon-Small-50, 50
+Icon-Small, 29
+Icon, 57
+tableview_accessory, 24
+tableview_accessory_playing, 23
+options, 30
+player_toolbar, 24
+player_option_top, 30
+player_option_bottom, 18
+playlist_playlistview, 24
+table_cell_accessory, 13
+myradio_play, 80, 144
+spinner, 27, 42
+missing_artwork, 300, 720
+missing_artwork_small, 70
+
+# file name, type name
+:files
+home_latest*, home_button
+home_playlists*, home_button
+home_stations*, home_button
+home_myradio*, home_button
+home_saved*, home_button
+home_favourites*, home_button
+home_settings*, nav_bar_button
+
+home_saved_rotator*, rotator
+
+player_like*, like_dislike
+player_dislike*, like_dislike
+
+player_info_view_*, player_infoview
+
+player_star*, nav_bar_button
+
+bg-we7*, background_tile
+
+Icon-72.png, Icon-72
+Icon-Small-50.png, Icon-Small-50
+Icon-Small.png, Icon-Small
+Icon.png, Icon
+
+programme_play.png, tableview_accessory
+programme_preview.png, tableview_accessory
+programme_playing.png, tableview_accessory_playing
+
+options_*, options
+
+player_btn_*, player_toolbar
+
+player_option_add.png, player_option_top
+player_option_repeat.png, player_option_top
+player_option_shuffle.png, player_option_top
+player_option_album.png, player_option_bottom
+player_option_artist.png, player_option_bottom
+
+playlist.png, playlist_playlistview
+accessory_chevron_white.png, table_cell_accessory
+
+myradio_play*, myradio_play
+myradio_pause*, myradio_play
+
+home_saved_spinner.png, spinner
+
+missing-artwork.png, missing_artwork
+missing-artwork-small.png, missing_artwork_small

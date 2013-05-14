@@ -1,7 +1,0 @@
-# type name, iphone width, ipad width
-:types
-home_button, 200, 260
-
-# file name, type name
-:files
-home_myradio_claire, home_button
